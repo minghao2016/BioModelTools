@@ -18,29 +18,26 @@ def domain_opening_statistics(df,crystal_distance_closed, crystal_distance_opene
     If both crystal_distance_closed and crystal_distance_opened are supplied
     calculates all intervals
     
-    Parameters
-    ----------
-    pandas.DataFrame  df: rows are frames, columns are runs
-    int crystal_distance_closed: distance of closed crystal
-    int crystal_distance_opened: distance of opened crystal
+    Args:
+        df (pandas.DataFrame) : rows are frames, columns are runs
+        crystal_distance_closed (int) : distance of closed crystal
+        crystal_distance_opened (int) : distance of opened crystal
     
-    Returns
-    -------
-    pandas.DataFrame instance with mean, std and percentages
+    Returns:
+        pandas.DataFrame instance with mean, std and percentages
     
-    Usage
-    -----
-    #rluc8_distances is dataframe created earlier
-    >>> rluc8_statistics = domain_opening_statistics(rluc8_distances, 12.9, 17.1)
-    >>> print(rluc8_statistics)
-                                 run1  run2  run3  run4
-    mean [A]                     17.3  13.6  14.4  13.5
-    std                           1.9   1.2   1.4   1.2
-    crystal distance opened [A]  17.6  17.6  17.6  17.6
-    crystal distance closed [A]  12.9  12.9  12.9  12.9
-    % =< 12.9                     1.2  27.5   8.4  32.0
-    % =< 12.9 =< 17.6            55.5  72.2  88.6  67.9
-    % >= 17.6                    43.3   0.3   3.0   0.1
+    Usage:
+        #rluc8_distances is dataframe created earlier
+        >>> rluc8_statistics = domain_opening_statistics(rluc8_distances, 12.9, 17.1)
+        >>> print(rluc8_statistics)
+                                     run1  run2  run3  run4
+        mean [A]                     17.3  13.6  14.4  13.5
+        std                           1.9   1.2   1.4   1.2
+        crystal distance opened [A]  17.6  17.6  17.6  17.6
+        crystal distance closed [A]  12.9  12.9  12.9  12.9
+        % =< 12.9                     1.2  27.5   8.4  32.0
+        % =< 12.9 =< 17.6            55.5  72.2  88.6  67.9
+        % >= 17.6                    43.3   0.3   3.0   0.1
 
     '''
     df_stats = df.describe()
