@@ -1,3 +1,4 @@
+#!/usr/bin/env/python
 def openness_gt(df, closed):
     '''Calculate the percentage of opening in certain run.'''
     return (df[df > closed].count() / df.count())*100
