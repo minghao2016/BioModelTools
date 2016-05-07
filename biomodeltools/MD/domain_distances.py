@@ -77,3 +77,4 @@ def domain_opening_statistics(df,crystal_distance_closed, crystal_distance_opene
                           'mean': r'mean [A]'},inplace=True)
     
     return df_stats
+
